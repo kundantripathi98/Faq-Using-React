@@ -1,4 +1,4 @@
-const AccItem = ({ num, title, text, curOpen, onOpen }) => {
+const AccItem = ({ num, title, children, curOpen, onOpen }) => {
   const isOpen = num === curOpen;
 
   return (
@@ -6,7 +6,7 @@ const AccItem = ({ num, title, text, curOpen, onOpen }) => {
       <div className="number">{num}</div>
       <div className="title">{title}</div>
       <div className="icon">{isOpen ? "-" : "+"}</div>
-      {isOpen && <div className="content-box">{text}</div>}
+      {isOpen && <div className="content-box">{children}</div>}
     </div>
   );
 };
