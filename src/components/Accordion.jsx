@@ -23,14 +23,23 @@ function Accordion() {
     <div className="accordion">
       {faqs.map((item, index) => (
         <AccItem
-          key={index}
+          key={item.title}
           title={item.title}
-          text={item.text}
           curOpen={curOpen}
           onOpen={setCurOpen}
           num={`0${index + 1}`}
-        />
+        >
+          {item.text}
+        </AccItem>
       ))}
+      <AccItem
+        title={"This is a manual title"}
+        curOpen={curOpen}
+        onOpen={setCurOpen}
+        num={23}
+      >
+        <p>Hello there good peoples!!</p>
+      </AccItem>
     </div>
   );
 }
